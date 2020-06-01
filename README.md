@@ -23,3 +23,9 @@ May 26 2020 - words count - 22,90,236
 
 Public Domain
 
+
+find -iname '*.html' -exec cat {} >> ../all.html \;
+
+
+httrack -p1 sitename
+

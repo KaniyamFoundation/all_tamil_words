@@ -1,6 +1,7 @@
 import sys
 import re
 import tamil
+import operator
 
 infile = sys.argv[1]
 
@@ -22,6 +23,7 @@ def is_tamil(word):
 with open(infile,'r',encoding='utf-8') as fp:
    line = fp.readline()
    cnt = 1
+   frequency = {}
    while line:
    #    print("Line {}: {}".format(cnt, line.strip()))
        #words = re.split('; |, |\*|\n',line)
@@ -47,16 +49,27 @@ with open(infile,'r',encoding='utf-8') as fp:
 #                       word = ''.join(word[:-2])
 #                       print(word)
 #                       sys.exit()
+                   frequency[word] = 1 + frequency.get(word,0)
                    unique_content.add(word)
               
        line = fp.readline()
        cnt += 1
     
 unique_file = open("unique_"+infile,"w")
+frequency_file = open("frequency+" + infile, "w")
 
 #unique_content = set(content)
 
 for line in unique_content:
     unique_file.write(str(line) + "\n")
 
-unique_file.close()    
+unique_file.close()
+
+
+for line in sorted(frequency.items(), key=operator.itemgetter(1),reverse=True):
+    print(line[0],':',line[1])
+    frequency_file.write(str(line[0]) + "," + str(line[1]) + "\n")
+
+frequency_file.close()    
+    
+
