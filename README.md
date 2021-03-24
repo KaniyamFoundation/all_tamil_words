@@ -23,10 +23,18 @@ extract with the below command in linux
 
 `tar xvjf words_and_frequency.tar.bz2`
 
+yields, 
+
+`words_and_frequency/` - 45 mb
+
+## Insight Generation. 
+(tamilwords_insights.ipynb)
+### Data Cleaning
+1. Removed words which are less than length 2 and greater than 15. 
 
 
 # Changelog
-
+* March 24 2021 - words count - 2557643 ( After base Cleaning)
 * June 4 2020 - words count - 25,83,001
 * June 4 2020 - Added words and frequency file - words_and_frequency.tar.bz2
 * May 27 2020 - words count - 23,92,064
