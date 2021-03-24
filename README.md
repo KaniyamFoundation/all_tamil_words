@@ -32,6 +32,9 @@ yields,
 ### Data Cleaning
 1. Removed words which are less than length 2 and greater than 15. 
 
+### Frequency Chart
+
+![Frequency Chart](./images/Frequency_Chart.png)
 
 # Changelog
 * March 24 2021 - words count - 2557643 ( After base Cleaning)
